@@ -5,6 +5,7 @@
 
 int main(int argc, char *argv[]){
 
+    //int *array2 = NULL;
     FILE *file;
     long long int sum=0;
     int size;
@@ -39,36 +40,31 @@ int main(int argc, char *argv[]){
     printf("la suma de los elementos tomo un tiempo de: %f \n",trans_time);
     printf("%s %lli %s","la suma de los elementos es: ",sum,"\n");
 
-    int *array2 = NULL;
     int mayor=0;
     int mayorRepetido=0;
     int cantidadRepetido=0;
 
-    for(int i=0; i<size; i++){
-        mayor = (array[i] >= mayor ? array[i] : mayor);
-    }
+    //for(int i=0; i<size; i++){
+    //    mayor = (array[i] >= mayor ? array[i] : mayor);
+    //}
 
-    array2 = (int *)malloc(mayor*sizeof(int));
-
-    for(int i=0; i<mayor; i++){
-        for (int j = 0; j < size; j++){
-            if(array[j] == i){
-                array2[i]+=1;
-            }
-        }
-    }
-
-    for (int i = 0; i < mayor; i++){
-        if (array2[i]>=cantidadRepetido){
-            mayorRepetido = i;
-            cantidadRepetido = array2[i];
-        }
-    }
+    //array2 = (int *)malloc(mayor*sizeof(int));
     
-    printf("%s %s %d %s %d %s ", "el numero que mas se repitio fue el: ","(",mayorRepetido,",",cantidadRepetido,")");
-    printf("\n");
+    //for(int i=0; i<mayor; i++){
+    //            array2[array[i]]+=1;
+    //}
+
+    //for (int i = 0; i < mayor; i++){
+    //    if (array2[i]>=cantidadRepetido){
+    //        mayorRepetido = i;
+    //        cantidadRepetido = array2[i];
+    //    }
+    //}
+    
+    //printf("%s %s %d %s %d %s ", "el numero que mas se repitio fue el: ","(",mayorRepetido,",",cantidadRepetido,")");
+    //printf("\n");
     fclose(file);
     free(array);
-    free(array2);
+    //free(array2);
     return 0;
 }
